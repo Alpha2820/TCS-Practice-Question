@@ -1,0 +1,29 @@
+package Numbers;
+
+import java.util.*;
+
+public class AbundantNumber {
+    public static boolean abund(int num) {
+        int sum = 0;
+        for (int i = 1; i < num; i++) {
+            if (num % i == 0) {
+                sum += i;
+            }
+        }
+        return sum > num;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number");
+        int n = sc.nextInt();
+        boolean check = abund(n);
+        if (check) {
+            System.out.println("The number is Abundant Number");
+        } else {
+            System.out.println("The number is not abundant number");
+        }
+        sc.close();
+    }
+
+}
